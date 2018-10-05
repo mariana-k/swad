@@ -1,0 +1,11 @@
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\bin\Debug\netcoreapp2.0\CD1_Kyrkosh.deps.json
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\bin\Debug\netcoreapp2.0\CD1_Kyrkosh.runtimeconfig.json
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\bin\Debug\netcoreapp2.0\CD1_Kyrkosh.runtimeconfig.dev.json
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\bin\Debug\netcoreapp2.0\CD1_Kyrkosh.dll
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\bin\Debug\netcoreapp2.0\CD1_Kyrkosh.pdb
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\obj\Debug\netcoreapp2.0\CD1_Kyrkosh.csprojAssemblyReference.cache
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\obj\Debug\netcoreapp2.0\CD1_Kyrkosh.csproj.CoreCompileInputs.cache
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\obj\Debug\netcoreapp2.0\CD1_Kyrkosh.AssemblyInfoInputs.cache
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\obj\Debug\netcoreapp2.0\CD1_Kyrkosh.AssemblyInfo.cs
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\obj\Debug\netcoreapp2.0\CD1_Kyrkosh.dll
+D:\tw\3-semester\sw-applications\deliveries\cd1\CD1_Kyrkosh\CD1_Kyrkosh\obj\Debug\netcoreapp2.0\CD1_Kyrkosh.pdb
