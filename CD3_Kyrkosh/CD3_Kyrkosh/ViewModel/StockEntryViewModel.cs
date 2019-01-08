@@ -72,7 +72,6 @@ namespace CD3_Kyrkosh.ViewModel
             }
         }
 
-
         public StockEntryViewModel(StockEntry entry)
         {
             stockEntry = entry;

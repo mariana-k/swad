@@ -14,8 +14,8 @@
             <RowDefinition Height="280*"/>
             <RowDefinition Height="75*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" AutoGenerateColumns="False" 
-                  ItemsSource="{Binding Items}" IsReadOnly="True">
+        <DataGrid x:Name="dataGrid" Uid="dataGrid" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" AutoGenerateColumns="False" 
+                  ItemsSource="{Binding Items}" IsReadOnly="{Binding ReadOnly}" SelectedItem="{Binding CurrentSelectedItem}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
@@ -26,7 +26,9 @@
         </DataGrid>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="0,5" VerticalAlignment="Center" Width="120"
                   ItemsSource="{Binding Currencies}" SelectedItem="{Binding SelectedCurrency}"/>
-        <Button Grid.Row="2" Height="30" Width="100" Content="Delete"  Command="{Binding ButtonClickedCommand}"/>
+        <Button Grid.Row="2" Height="30" Width="100" Content="Delete"  Command="{Binding DeleteItem}"/>
+        <Button HorizontalAlignment="Left" Grid.Row="2" Height="30" Width="100" Content="Add"  Command="{Binding AddItem}"/>
+        <Button HorizontalAlignment="Right" Grid.Row="2" Height="30" Width="100" Content="Edit" Click="Button_Click" />
     </Grid>
 
 </Window>

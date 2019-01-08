@@ -19,17 +19,16 @@ namespace CD3_Kyrkosh.ViewModel
         {
             get { return Enum.GetValues(typeof(Currencies));  }
         }
-
         public Currencies SelectedCurrency
         {
             get { return selectedCurrency; }
-            set {
+            set
+            {
                 selectedCurrency = value;
                 OnChange("SelectedCurrency");
                 StartConvertion();
             }
         }
-
         private void StartConvertion()
         {
             foreach( var item in Items)
@@ -46,30 +45,79 @@ namespace CD3_Kyrkosh.ViewModel
         {
             get { return items; }
             set { items = value; }
-        }     
+        }
+
+        public RelayCommand DeleteItem { get; set; }
+        public RelayCommand AddItem { get; set; }
+        public RelayCommand EditItem { get; set; }
+
+        private StockEntryViewModel currentSelectedItem;
+        public StockEntryViewModel CurrentSelectedItem
+        {
+            get { return currentSelectedItem; }
+            set
+            {
+                currentSelectedItem = value;
+
+            }
+        }
+
+        public bool ReadOnly { get; private set; }
 
         public MainViewModel()
         {
+            ReadOnly = true;
             SampleManager manager = new SampleManager();
             stock = manager.CurrentStock.OnStock;
             foreach (var item in manager.CurrentStock.OnStock)
             {
                 Items.Add(new StockEntryViewModel(item));
             }
+           
+            DeleteItem = new RelayCommand(DelteRow);
+            AddItem = new RelayCommand(AddRow);
+            EditItem = new RelayCommand(DelteRow);
         }
 
-        private void ItemsView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DelteRow(object obj)
         {
-            var dg = sender as DataGrid;
-            if (dg == null) return;
-            var index = dg.SelectedIndex;
-            //here we get the actual row at selected index
-            DataGridRow row = dg.ItemContainerGenerator.ContainerFromIndex(index) as DataGridRow;
-
-            //here we get the actual data item behind the selected row
-            var item = dg.ItemContainerGenerator.ItemFromContainer(row);
+            Items.Remove(CurrentSelectedItem); //delete from view
 
         }
+
+        private void AddRow(object obj)
+        {
+            StockEntry entry = new StockEntry();
+            Group group = new Group();
+            group.Name = "Edit";
+            Software software = new Software("Edit entry");
+            software.Name = "Now edit entry";
+            software.PurchasePrice = 123;
+            software.SalesPrice = 234;
+            software.Category = group;
+            entry.SoftwarePackage = software;
+
+            entry.Amount = 0;
+
+            // Items.Add(CurrentSelectedItem); //delete from view
+            Items.Add(new StockEntryViewModel(entry));
+
+        }
+       
+        private void EditRow(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+        
+
     }
 
 }
