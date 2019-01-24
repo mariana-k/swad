@@ -1,0 +1,5 @@
+D:\tw\3-semester\sw-applications\git\swad\CD5_Kyrkosh\CD5_Kyrkosh\CD5_Kyrkosh\obj\Debug\CD5_Kyrkosh.csprojAssemblyReference.cache
+D:\tw\3-semester\sw-applications\git\swad\CD5_Kyrkosh\CD5_Kyrkosh\CD5_Kyrkosh\obj\Debug\MainWindow.g.cs
+D:\tw\3-semester\sw-applications\git\swad\CD5_Kyrkosh\CD5_Kyrkosh\CD5_Kyrkosh\obj\Debug\App.g.cs
+D:\tw\3-semester\sw-applications\git\swad\CD5_Kyrkosh\CD5_Kyrkosh\CD5_Kyrkosh\obj\Debug\CD5_Kyrkosh_MarkupCompile.cache
+D:\tw\3-semester\sw-applications\git\swad\CD5_Kyrkosh\CD5_Kyrkosh\CD5_Kyrkosh\obj\Debug\CD5_Kyrkosh_MarkupCompile.lref
