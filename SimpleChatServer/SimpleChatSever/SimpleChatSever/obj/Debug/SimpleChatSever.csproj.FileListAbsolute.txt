@@ -1,7 +1,0 @@
-D:\tw\3-semester\sw-applications\git\swad\SimpleChatServer\SimpleChatSever\SimpleChatSever\obj\Debug\SimpleChatSever.csprojAssemblyReference.cache
-D:\tw\3-semester\sw-applications\git\swad\SimpleChatServer\SimpleChatSever\SimpleChatSever\obj\Debug\SimpleChatSever.csproj.CoreCompileInputs.cache
-D:\tw\3-semester\sw-applications\git\swad\SimpleChatServer\SimpleChatSever\SimpleChatSever\bin\Debug\SimpleChatSever.exe.config
-D:\tw\3-semester\sw-applications\git\swad\SimpleChatServer\SimpleChatSever\SimpleChatSever\bin\Debug\SimpleChatSever.exe
-D:\tw\3-semester\sw-applications\git\swad\SimpleChatServer\SimpleChatSever\SimpleChatSever\bin\Debug\SimpleChatSever.pdb
-D:\tw\3-semester\sw-applications\git\swad\SimpleChatServer\SimpleChatSever\SimpleChatSever\obj\Debug\SimpleChatSever.exe
-D:\tw\3-semester\sw-applications\git\swad\SimpleChatServer\SimpleChatSever\SimpleChatSever\obj\Debug\SimpleChatSever.pdb
