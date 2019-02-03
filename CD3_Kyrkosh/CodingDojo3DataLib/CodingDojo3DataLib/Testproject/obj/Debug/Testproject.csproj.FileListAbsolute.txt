@@ -1,0 +1,19 @@
+C:\Users\florian\Documents\Visual Studio 2012\Projects\SWE1_WS12_13\CodingDojo4DataLib\Testproject\obj\Debug\Testproject.csprojResolveAssemblyReference.cache
+C:\Users\florian\Documents\Visual Studio 2012\Projects\SWE1_WS12_13\CodingDojo4DataLib\Testproject\bin\Debug\Testproject.exe.config
+C:\Users\florian\Documents\Visual Studio 2012\Projects\SWE1_WS12_13\CodingDojo4DataLib\Testproject\bin\Debug\Testproject.exe
+C:\Users\florian\Documents\Visual Studio 2012\Projects\SWE1_WS12_13\CodingDojo4DataLib\Testproject\bin\Debug\Testproject.pdb
+C:\Users\florian\Documents\Visual Studio 2012\Projects\SWE1_WS12_13\CodingDojo4DataLib\Testproject\bin\Debug\CodingDojo4DataLib.dll
+C:\Users\florian\Documents\Visual Studio 2012\Projects\SWE1_WS12_13\CodingDojo4DataLib\Testproject\bin\Debug\CodingDojo4DataLib.pdb
+C:\Users\florian\Documents\Visual Studio 2012\Projects\SWE1_WS12_13\CodingDojo4DataLib\Testproject\obj\Debug\Testproject.exe
+C:\Users\florian\Documents\Visual Studio 2012\Projects\SWE1_WS12_13\CodingDojo4DataLib\Testproject\obj\Debug\Testproject.pdb
+C:\Users\florian\Documents\FH\BWI\SYM\Coding Dojos\CodingDojo3DataLib\CodingDojo3DataLib\Testproject\bin\Debug\Testproject.exe.config
+C:\Users\florian\Documents\FH\BWI\SYM\Coding Dojos\CodingDojo3DataLib\CodingDojo3DataLib\Testproject\obj\Debug\Testproject.exe
+C:\Users\florian\Documents\FH\BWI\SYM\Coding Dojos\CodingDojo3DataLib\CodingDojo3DataLib\Testproject\obj\Debug\Testproject.pdb
+C:\Users\florian\Desktop\CodingDojo3DataLib\Testproject\bin\Debug\Testproject.exe.config
+C:\Users\florian\Desktop\CodingDojo3DataLib\Testproject\obj\Debug\Testproject.exe
+C:\Users\florian\Desktop\CodingDojo3DataLib\Testproject\obj\Debug\Testproject.pdb
+C:\Users\florian\Desktop\CodingDojo3DataLib\Testproject\obj\Debug\Testproject.csprojResolveAssemblyReference.cache
+C:\Users\florian\Desktop\CodingDojo3DataLib\Testproject\bin\Debug\Testproject.exe
+C:\Users\florian\Desktop\CodingDojo3DataLib\Testproject\bin\Debug\Testproject.pdb
+C:\Users\florian\Desktop\CodingDojo3DataLib\Testproject\bin\Debug\CodingDojo4DataLib.dll
+C:\Users\florian\Desktop\CodingDojo3DataLib\Testproject\bin\Debug\CodingDojo4DataLib.pdb

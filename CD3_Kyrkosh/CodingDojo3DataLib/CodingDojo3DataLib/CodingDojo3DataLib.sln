@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingDojo3DataLib", "CodingDojo4DataLib\CodingDojo3DataLib.csproj", "{A0B456AD-88EF-42C7-841F-01F2629787DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testproject", "Testproject\Testproject.csproj", "{89BB56E7-EBF8-4EDE-A298-732AD83B32B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0B456AD-88EF-42C7-841F-01F2629787DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B456AD-88EF-42C7-841F-01F2629787DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B456AD-88EF-42C7-841F-01F2629787DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B456AD-88EF-42C7-841F-01F2629787DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89BB56E7-EBF8-4EDE-A298-732AD83B32B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89BB56E7-EBF8-4EDE-A298-732AD83B32B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89BB56E7-EBF8-4EDE-A298-732AD83B32B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89BB56E7-EBF8-4EDE-A298-732AD83B32B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

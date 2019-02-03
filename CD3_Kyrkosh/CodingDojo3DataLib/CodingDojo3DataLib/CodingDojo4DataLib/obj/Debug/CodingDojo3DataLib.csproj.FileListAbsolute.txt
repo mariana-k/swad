@@ -1,0 +1,5 @@
+C:\Users\florian\Desktop\CodingDojo3DataLib\CodingDojo4DataLib\bin\Debug\CodingDojo4DataLib.dll
+C:\Users\florian\Desktop\CodingDojo3DataLib\CodingDojo4DataLib\bin\Debug\CodingDojo4DataLib.pdb
+C:\Users\florian\Desktop\CodingDojo3DataLib\CodingDojo4DataLib\obj\Debug\CodingDojo3DataLib.csprojResolveAssemblyReference.cache
+C:\Users\florian\Desktop\CodingDojo3DataLib\CodingDojo4DataLib\obj\Debug\CodingDojo4DataLib.dll
+C:\Users\florian\Desktop\CodingDojo3DataLib\CodingDojo4DataLib\obj\Debug\CodingDojo4DataLib.pdb

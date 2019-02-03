@@ -1,58 +1,101 @@
-﻿using CD3_Kyrkosh.Command;
+using CD3_Kyrkosh.Converters;
+using CD3_Kyrkosh.Model;
 using CodingDojo4DataLib;
 using CodingDojo4DataLib.Converter;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
+using System.Windows.Data;
 
 namespace CD3_Kyrkosh.ViewModel
 {
-    class MainViewModel : BaseViewModel
+   
+    public class MainViewModel : ViewModelBase
     {
-        public Array Currencies
+
+        private List<object> FormatCurrencies()
         {
-            get { return Enum.GetValues(typeof(Currencies));  }
+            List<object> currencies = new List<object>();
+            foreach (var currency in Enum.GetValues(typeof(Currencies)))
+            {
+                currencies.Add(currency);
+            }
+
+            object tmp = currencies[0];
+            currencies[0] = currencies[1];
+            currencies[1] = tmp;
+            return currencies;
+        }
+    
+        public List<object> Currencies
+        {
+            get {
+
+                
+                return FormatCurrencies();
+            }
         }
         public Currencies SelectedCurrency
         {
-            get { return selectedCurrency; }
+            get
+            {
+                return selectedCurrency;
+            }
             set
             {
                 selectedCurrency = value;
-                OnChange("SelectedCurrency");
-                StartConvertion();
+                RaisePropertyChanged("SelectedCurrency");
+                this.ConvertCurrencies();
             }
         }
-        private void StartConvertion()
-        {
-            foreach( var item in Items)
-            {
-                item.CalculateSalesPriceFromEuro(SelectedCurrency);
-                item.CalculatePurchasePriceFromEuro(SelectedCurrency);
-            } 
-        }
-        private List<StockEntry> stock;
-        
-        private CodingDojo4DataLib.Converter.Currencies selectedCurrency;
-        public ObservableCollection<StockEntryViewModel> items = new ObservableCollection<StockEntryViewModel>();
-        public ObservableCollection<StockEntryViewModel> Items
-        {
-            get { return items; }
-            set { items = value; }
-        }
 
+        private Currencies selectedCurrency;
+        public ObservableCollection<StockEntryModel> items = new ObservableCollection<StockEntryModel>();
+        public ObservableCollection<StockEntryModel> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
+        public void ConvertCurrencies()
+        {
+            foreach(var item in Items)
+            {
+                item.ConvertSalesPrice(selectedCurrency);
+                item.ConvertPurchasePrice(selectedCurrency);
+            }
+
+             
+        }
+        public List<StockEntry> stock;
         public RelayCommand DeleteItem { get; set; }
         public RelayCommand AddItem { get; set; }
-        public RelayCommand EditItem { get; set; }
+        public MainViewModel()
+        {
+ 
+            SampleManager manager = new SampleManager();
+            stock = manager.CurrentStock.OnStock;
+   
+            foreach (var item in stock) {
+                items.Add(new StockEntryModel(item));
+            }
 
-        private StockEntryViewModel currentSelectedItem;
-        public StockEntryViewModel CurrentSelectedItem
+            DeleteItem = new RelayCommand(DeleteRow);
+            AddItem = new RelayCommand(AddRow);
+        }
+
+        private StockEntryModel currentSelectedItem;
+        public StockEntryModel CurrentSelectedItem
         {
             get { return currentSelectedItem; }
             set
@@ -62,62 +105,41 @@ namespace CD3_Kyrkosh.ViewModel
             }
         }
 
-        public bool ReadOnly { get; private set; }
-
-        public MainViewModel()
+        private void DeleteRow()
         {
-            ReadOnly = true;
-            SampleManager manager = new SampleManager();
-            stock = manager.CurrentStock.OnStock;
-            foreach (var item in manager.CurrentStock.OnStock)
+            if (CurrentSelectedItem != null)
             {
-                Items.Add(new StockEntryViewModel(item));
+                foreach (var item in stock)
+                {
+                    if (item.SoftwarePackage.Name.Equals(CurrentSelectedItem.Name))
+                    {
+                        stock.Remove(item);
+                        break;
+                    }
+                }
+                System.Windows.MessageBox.Show("One item removed. There are " + stock.Count + " items on the stock now!");
+                Items.Remove(CurrentSelectedItem);
+            } else
+            {
+                System.Windows.MessageBox.Show("No items selected!");
             }
-           
-            DeleteItem = new RelayCommand(DelteRow);
-            AddItem = new RelayCommand(AddRow);
-            EditItem = new RelayCommand(DelteRow);
-        }
-
-        private void DelteRow(object obj)
-        {
-            Items.Remove(CurrentSelectedItem); //delete from view
-
-        }
-
-        private void AddRow(object obj)
-        {
-            StockEntry entry = new StockEntry();
-            Group group = new Group();
-            group.Name = "Edit";
-            Software software = new Software("Edit entry");
-            software.Name = "Now edit entry";
-            software.PurchasePrice = 123;
-            software.SalesPrice = 234;
-            software.Category = group;
-            entry.SoftwarePackage = software;
-
-            entry.Amount = 0;
-
-            // Items.Add(CurrentSelectedItem); //delete from view
-            Items.Add(new StockEntryViewModel(entry));
-
         }
        
-        private void EditRow(object sender, RoutedEventArgs e)
+        private void AddRow()
         {
-            try
+            StockEntry newEntry = new StockEntry();
+            newEntry.Amount = 0;
+            newEntry.SoftwarePackage = new Software("New Entry");
+            newEntry.SoftwarePackage.Category = new Group()
             {
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return;
-            }
+                Name = "New Entry"
+            };
+
+            StockEntryModel newStockEntryModel = new StockEntryModel(newEntry);
+            stock.Add(newEntry);
+            Items.Add(newStockEntryModel);
+            System.Windows.MessageBox.Show("One item added. There are " + stock.Count + " items on the stock now!");
         }
-        
-
+       
     }
-
 }

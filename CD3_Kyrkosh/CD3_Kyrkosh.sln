@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CD3_Kyrkosh", "CD3_Kyrkosh\CD3_Kyrkosh.csproj", "{834F03B4-BF98-478D-AEA8-1B1EBF381B26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CD3_Kyrkosh", "CD3_Kyrkosh\CD3_Kyrkosh.csproj", "{15B5C376-DA5F-4A49-8894-A980CE3C462C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{834F03B4-BF98-478D-AEA8-1B1EBF381B26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{834F03B4-BF98-478D-AEA8-1B1EBF381B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{834F03B4-BF98-478D-AEA8-1B1EBF381B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{834F03B4-BF98-478D-AEA8-1B1EBF381B26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B5C376-DA5F-4A49-8894-A980CE3C462C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B5C376-DA5F-4A49-8894-A980CE3C462C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B5C376-DA5F-4A49-8894-A980CE3C462C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B5C376-DA5F-4A49-8894-A980CE3C462C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7EB295E3-7BA7-4984-96DC-B178F9BA3937}
+		SolutionGuid = {A81213BE-39C5-4F66-991E-BE46F36F268C}
 	EndGlobalSection
 EndGlobal

@@ -3,32 +3,48 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CD3_Kyrkosh"
         xmlns:vm="clr-namespace:CD3_Kyrkosh.ViewModel"
+        xmlns:cv="clr-namespace:CD3_Kyrkosh.Converters"
+        mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <cv:AmountToBadgeConverter x:Key="AmountToBadgeConverter"/>
+    </Window.Resources>
+   
     <Window.DataContext>
-        <vm:MainViewModel/>
+        <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
-    <Grid>
+    <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="66*"/>
-            <RowDefinition Height="280*"/>
-            <RowDefinition Height="75*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dataGrid" Uid="dataGrid" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" AutoGenerateColumns="False" 
-                  ItemsSource="{Binding Items}" IsReadOnly="{Binding ReadOnly}" SelectedItem="{Binding CurrentSelectedItem}">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="50">
+            <Label Grid.Column="0" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center">Currency:</Label>
+            <ComboBox Grid.Column="1" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedItem="{Binding SelectedCurrency}" SelectedIndex="0" ItemsSource="{Binding Currencies}"></ComboBox>
+        </StackPanel>
+        <DataGrid x:Name="dataGrid1" Grid.Row="1" ItemsSource="{Binding Items}" RowEditEnding="dataGrid1_RowEditEnding" AutoGenerateColumns="False" SelectedItem="{Binding CurrentSelectedItem}" IsReadOnly="true">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
-                <DataGridTextColumn Header="Sales Price" Binding="{Binding SalesPrice}"/>
-                <DataGridTextColumn Header="Purchase Price" Binding="{Binding PurchasePrice}"/>
-                <DataGridTextColumn Header="On Stock" Binding="{Binding OnStock}"/>
+                <DataGridTextColumn Header="Group" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Group}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Sales Price" Binding="{Binding SalesPrice}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Purchase Price" Binding="{Binding PurchasePrice}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="On Stock">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Ellipse Width="10" Height="10" Fill="{Binding Amount, Converter={StaticResource AmountToBadgeConverter}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="0,5" VerticalAlignment="Center" Width="120"
-                  ItemsSource="{Binding Currencies}" SelectedItem="{Binding SelectedCurrency}"/>
-        <Button Grid.Row="2" Height="30" Width="100" Content="Delete"  Command="{Binding DeleteItem}"/>
-        <Button HorizontalAlignment="Left" Grid.Row="2" Height="30" Width="100" Content="Add"  Command="{Binding AddItem}"/>
-        <Button HorizontalAlignment="Right" Grid.Row="2" Height="30" Width="100" Content="Edit" Click="Button_Click" />
-    </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Height="20">
+            <Button Command="{Binding DeleteItem}" HorizontalAlignment="Stretch" Width="100">Delete</Button>
+            <Button Command="{Binding AddItem}" HorizontalAlignment="Stretch" Width="100" Margin="10, 0">Add</Button>
+            <Button Click="dataGridView1_CellContentClick" HorizontalAlignment="Stretch" Width="100">Edit</Button>
 
+        </StackPanel>
+    </Grid>
 </Window>
