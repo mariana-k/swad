@@ -1,0 +1,47 @@
+﻿<Window x:Class="CD7_Kyrkosh.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CD7_Kyrkosh"
+        xmlns:vm="clr-namespace:CD7_Kyrkosh.ViewModel"
+        xmlns:v="clr-namespace:CD7_Kyrkosh.Views"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1000">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Column="0" Width="100">
+            <Button Content="Overview" Margin="5" Command="{Binding OverviewBtnClickedCmd}"></Button>
+            <Button Content="MyToys" Margin="5" Command="{Binding MyToysBtnClickedCmd}"></Button>
+        </StackPanel>
+        <Border  Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Width="1000" CornerRadius="30 0 0 0">
+        <ContentControl BorderThickness="0" BorderBrush="White" Grid.Column="1" Content="{Binding CurrentVm}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vm:OverviewVm}">
+                    <v:OverviewView />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:MyToysVm}">
+                    <v:MyToysView/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+        </Border>
+     
+        <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Height="80" Width="900" Orientation="Horizontal">
+            <Image Source="{Binding MyImage}" Margin="10" Width="50" Height="50"></Image>
+            <Border Grid.Column="1" Margin="5" CornerRadius="8" BorderBrush="DarkGray" BorderThickness="1" Width="800">
+                <Label  Margin="5" Content="{Binding MyMessage}" VerticalAlignment="Center" Height="25"/>
+            </Border>
+        </StackPanel>
+    </Grid>
+    
+</Window>
